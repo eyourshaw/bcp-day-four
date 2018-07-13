@@ -13,75 +13,56 @@
     </style>
 </head>
 <body>
-    <h1>Just and App</h1>
+    <h1>Just an App</h1>
     <main>
         <p>
             <label>
-                <input name="power" type="radio">square
+                Number:
+                <input type='number' id='number'>
             </label>
-            <label>
-                <input name="power" type="radio">triangle
-            </label>
-            <label>
-                <input name="power" type="radio">quad
-            </label>
-        </p>
-
-        <p>
-            <textarea>default content</textarea>
-        </p>
-
-        <p>
-            <select>
-                <option>red</option>
-                <option>green</option>
-                <option>blue</option>
-            </select>
         </p>
 
         <p>
             <label>
-                Name:
-                <input id="name">
+                <input name="power" type="radio" value='2'>square
+            </label>
+            <label>
+                <input name="power" type="radio" value='3'>triangle
+            </label>
+            <label>
+                <input name="power" type="radio" value='4'>quadratic
             </label>
         </p>
 
+
         <p>
-            <button onclick="showName()">click me</button>
+            <button onclick="calc()">click for answer</button>
         </p>
 
-        <p id='result'></p>
+        <p id='result'> Enter a number and choose a power</p>
     </main>
 
     <script>
         
-        function showName() {
-            var input = document.getElementById('name');
-            var name = input.value;
+        function calc() {
+            var input = document.getElementById('number');
+            var number = input.value;
 
-            var p = document.getElementById('result');
-            p.innerText = 'Your name is ' + name;
-            
-            var background;
-            if(name === 'Erik') {
-                background = 'steelblue';
+            if(isNaN(number)) {
+                alert('please input a number');
             }
+
             else {
-                background = '';
-            }
+
+                var radio = document.querySelector('input[name=power]:checked');
+                                
+                var p = document.getElementById('result');
+                p.innerHTML = 'Your number is <strong>' + (number) + '</strong>';
+
             
-            p.style.backgroundColor = background;
-        }
-        function count() {
-
-            for(var i = 0; i < 20; i++) {
-                console.log(i + 1);
             }
         }
-
-        function change() {
-            console.log('change happened')
-        }
+        
 
 
     </script>
