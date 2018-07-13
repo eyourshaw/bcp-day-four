@@ -24,13 +24,13 @@
 
         <p>
             <label>
-                <input name="power" type="radio" value='2'>square
+                <input name="power" type="radio" value='2' id='exponent'>square
             </label>
             <label>
-                <input name="power" type="radio" value='3'>triangle
+                <input name="power" type="radio" value='3' id='exponent'>triangle
             </label>
             <label>
-                <input name="power" type="radio" value='4'>quadratic
+                <input name="power" type="radio" value='4' id='exponent'>quadratic
             </label>
         </p>
 
@@ -47,6 +47,8 @@
         function calc() {
             var input = document.getElementById('number');
             var number = input.value;
+            var input = document.getElementById('exponent');
+            var exponent = input.value;
 
             if(isNaN(number)) {
                 alert('please input a number');
@@ -57,7 +59,7 @@
                 var radio = document.querySelector('input[name=power]:checked');
                                 
                 var p = document.getElementById('result');
-                p.innerHTML = 'Your number is <strong>' + (number) + '</strong>';
+                p.innerHTML = 'Your number is <strong>' + (number*exponent) + '</strong>';
 
             
             }
