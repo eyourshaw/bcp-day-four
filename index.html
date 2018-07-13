@@ -40,16 +40,38 @@
         </p>
 
         <p>
-            <input onkeypress="change()">
+            <label>
+                Name:
+                <input id="name">
+            </label>
         </p>
 
         <p>
-            <button onclick="count()">click me</button>
+            <button onclick="showName()">click me</button>
         </p>
+
+        <p id='result'></p>
     </main>
 
     <script>
         
+        function showName() {
+            var input = document.getElementById('name');
+            var name = input.value;
+
+            var p = document.getElementById('result');
+            p.innerText = 'Your name is ' + name;
+            
+            var background;
+            if(name === 'Erik') {
+                background = 'steelblue';
+            }
+            else {
+                background = '';
+            }
+            
+            p.style.backgroundColor = background;
+        }
         function count() {
 
             for(var i = 0; i < 20; i++) {
@@ -60,6 +82,7 @@
         function change() {
             console.log('change happened')
         }
+
 
     </script>
 </body>
