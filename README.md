@@ -1,1 +1,2 @@
 #readme
+JS, CSS, HTML
